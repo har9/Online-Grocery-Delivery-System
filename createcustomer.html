@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New Customer</title>
+</head>
+<body>
+	<?php
+		include 'header.php';
+	?>
+
+	<form action="createcustomer.php" method="post" align="left">
+		<fieldset>
+		<legend>Customer Information</legend>
+		First Name: <input type="text" name="firstname">
+		<br>
+		Last Name: <input type="text" name="lastname">
+		<br>
+		Age: <input type="number" name="age">
+		<br>
+		Sex:
+		<br>
+		<input type="radio" name="sex" value="m"> Male
+		<br>
+		<input type="radio" name="sex" value="f"> Female
+		<br>
+		Phone Number: <input type="tel" maxlength="10" name="phonenumber">
+		Email: <input type="email" name="email">
+		<br>
+		Password: <input type="password" name="password">
+		<br>
+		<br>
+		Address: <input type="text" name="address">
+		<br>
+		City: <input type="text" name="city">
+		State: <input type="text" name="state">
+		Zip Code: <input type="number" name="zipcode">
+		<br>
+		<br>
+		<div>
+			Preferred Payment Method:
+			<br>
+			<a href="javascript:ShowContent('creditcardinfo')">
+				<input type="radio" name="payment" value="creditcard"> Credit Card
+			</a>
+			<br>
+			<a href="javascript:HideContent('creditcardinfo')">
+				<input type="radio" name="payment" value="check"> Check
+			</a>
+		</div>
+		<div id="creditcardinfo" style="display:none">
+			Credit Card Number: <input type="number" name="creditcardnumber">
+
+			<br>
+			Expiration Date: <input type="date" name="ccexpiration">
+			<br>
+		</div>
+
+		<br>
+		<br>
+		<input type="submit" value="Create Profile">
+		<br>
+		</fieldset>
+	</form>
+
+	<script type="text/javascript" language="JavaScript"><!--
+		function HideContent(d) {
+			document.getElementById(d).style.display = "none";
+		}
+		function ShowContent(d) {
+			document.getElementById(d).style.display = "block";
+		}
+		function ReverseDisplay(d) {
+			if(document.getElementById(d).style.display == "none") { 
+				document.getElementById(d).style.display = "block"; 
+			} else { 
+				document.getElementById(d).style.display = "none"; 
+			}
+		}
+	//--></script>
+
+</body>
+
+
